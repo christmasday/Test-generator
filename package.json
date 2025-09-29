@@ -1,0 +1,36 @@
+{
+  "name": "Fabian's-test-generator",
+  "version": "1.0.0",
+  "description": "Generate comprehensive test scenarios from documentation and web pages using AI",
+  "main": "background.js",
+  "scripts": {
+    "build": "echo 'No build process required for Chrome extension'",
+    "package": "zip -r test-generator.zip . -x '*.git*' 'node_modules/*' 'package*.json'",
+    "lint": "eslint *.js",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "chrome-extension",
+    "test-scenarios",
+    "qa",
+    "testing",
+    "ai",
+    "openai",
+    "gemini",
+    "deepseek",
+    "test-automation"
+  ],
+  "author": "Fabian Amicki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christmasday/Fabian-test-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christmasday/Fabian-test-generator/issues"
+  },
+  "homepage": "https://github.com/christmasday/Fabian-test-generator#readme",
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}

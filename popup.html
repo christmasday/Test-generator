@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Scenario Generator</title>
+    <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🧪 Fabian's Test Generator</h1>
+            <p>Generate comprehensive test scenarios from documentation and web pages</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="generate">Generate</button>
+            <button class="tab-button" data-tab="results">Results</button>
+        </div>
+
+        <!-- Settings Tab (hidden by default, only shown when gear icon clicked) -->
+        <div class="tab-content" id="settings" style="display:none;">
+          <div class="section">
+            <h3>Settings</h3>
+            <div id="settings-content"></div>
+          </div>
+        </div>
+
+        <!-- Generate Tab -->
+        <div class="tab-content active" id="generate">
+          <div class="section" style="display:flex; justify-content:space-between; align-items:center;">
+            <h3>Content Source</h3>
+            <button id="gearSettings" class="btn btn-icon gear-btn" title="Settings">
+              <span style="font-size:1.5em;">⚙️</span>
+            </button>
+          </div>
+          <div class="section">
+            <div class="source-options">
+              <button class="source-btn active" data-source="current-page">
+                📄 Current Page
+              </button>
+              <button class="source-btn" data-source="document">
+                📋 Upload Document
+              </button>
+            </div>
+          </div>
+          <div class="section" id="generation-options-section">
+            <h4>Generation Options</h4>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="includeEdgeCases" checked>
+                Include edge cases and boundary conditions
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="includeNegativeTests" checked>
+                Include negative test scenarios
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="includePerformanceTests">
+                Include performance test scenarios
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="includeSecurityTests">
+                Include security test scenarios
+              </label>
+            </div>
+          </div>
+          <div class="section" id="current-page-section">
+            <h3>Current Page Analysis</h3>
+            <div id="page-info">
+              <p><strong>URL:</strong> <span id="current-url"></span></p>
+              <p><strong>Title:</strong> <span id="current-title"></span></p>
+              <p><strong>Content Length:</strong> <span id="content-length"></span> characters</p>
+            </div>
+            <div id="extracted-requirements" class="requirements-preview"></div>
+          </div>
+          <div class="section" id="document-section" style="display: none;">
+            <h3>Upload Document</h3>
+            <input type="file" id="documentUpload" accept=".txt,.pdf,.doc,.docx">
+            <div id="document-preview"></div>
+          </div>
+          <div class="section">
+            <button id="generateScenarios" class="btn btn-primary btn-large">
+              🚀 Generate Test Scenarios
+            </button>
+            <div id="generation-progress" class="progress" style="display: none;">
+              <div class="progress-bar"></div>
+              <p>Generating test scenarios...</p>
+            </div>
+            <div id="generation-status" class="status-area"></div>
+          </div>
+        </div>
+
+        <!-- Results Tab -->
+        <div class="tab-content" id="results">
+            <div class="section">
+                <h3>Generated Test Scenarios</h3>
+                <div class="results-summary" id="results-summary"></div>
+                <div class="results-actions">
+                    <button id="downloadExcel" class="btn btn-success">
+                        📊 Download Excel
+                    </button>
+                    <button id="downloadJSON" class="btn btn-secondary">
+                        📄 Download JSON
+                    </button>
+                    <button id="copyToClipboard" class="btn btn-secondary">
+                        📋 Copy to Clipboard
+                    </button>
+                </div>
+                <div class="scenarios-list" id="scenarios-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

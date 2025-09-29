@@ -1,0 +1,25 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#grad)" stroke="#fff" stroke-width="4"/>
+  
+  <!-- Test Tube Icon -->
+  <path d="M45 35 L45 85 Q45 95 55 95 L73 95 Q83 95 83 85 L83 35 Q83 25 73 25 L55 25 Q45 25 45 35 Z" fill="#fff" opacity="0.9"/>
+  
+  <!-- Liquid in test tube -->
+  <path d="M50 40 L50 80 Q50 85 55 85 L73 85 Q78 85 78 80 L78 40 Z" fill="#4CAF50"/>
+  
+  <!-- Bubbles -->
+  <circle cx="60" cy="50" r="3" fill="#fff" opacity="0.8"/>
+  <circle cx="68" cy="60" r="2" fill="#fff" opacity="0.6"/>
+  <circle cx="65" cy="70" r="2.5" fill="#fff" opacity="0.7"/>
+  
+  <!-- Checkmark -->
+  <path d="M55 65 L62 72 L73 58" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Fabian's Test Generator",
+  "version": "1.0.0",
+  "description": "Generate comprehensive test scenarios and edge cases from documentation and web pages",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "downloads",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Test Scenario Generator"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html", "styles/*", "icons/*", "libs/xlsx.full.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
